@@ -55,6 +55,6 @@ server.get("/user", (req, res)=>{
     res.send(Object.keys(scores))
 })
 
-server.listen(8080, ()=>{
+server.listen(80, ()=>{
     console.log("running on port 8080")
 })
