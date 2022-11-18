@@ -3,6 +3,8 @@ const parser = require('body-parser')
 const server = express()
 const fs = require('fs')
 
+var port = process.env.port || 8080
+
 //server.use(express.json)
 
 var jsonParser = parser.json()
@@ -55,6 +57,6 @@ server.get("/user", (req, res)=>{
     res.send(Object.keys(scores))
 })
 
-server.listen(80, ()=>{
-    console.log("running on port 8080")
+server.listen(port, ()=>{
+    console.log("running on port %d", port)
 })
