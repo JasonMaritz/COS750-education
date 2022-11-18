@@ -60,3 +60,5 @@ server.get("/user", (req, res)=>{
 server.listen(port, ()=>{
     console.log("running")
 })
+
+module.exports = server
