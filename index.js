@@ -26,10 +26,8 @@ function writeScores(){
 }
 
 server.post('/', jsonParser, (req, res)=>{
-    readScores()
     console.log(req.body)
     scores[req.body.user] = req.body
-    writeScores()
     res.send("200: Ok")
 })
 
@@ -38,13 +36,11 @@ server.get("/", (req, res)=>{
 })
 
 server.get("/score", (req, res)=>{
-    readScores()
     res.send(scores)
 })
 
 server.get("/score/:user", (req, res)=>{
     intermediaryScore = 0
-    readScores()
 
     for(level in scores[req.params.user]["level"]){
         intermediaryScore += scores[req.params.user]["level"][level]["score"]
